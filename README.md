@@ -19,11 +19,22 @@ implementation 'com.prpr894.baseioclibrary:baseioclibrary:1.0.0'
 
 ## 使用：<br>
 ```
-
+public class MainActivity extends AppCompatActivity {
     @ViewBindId(R.id.tv_main)
     private TextView mTvMain;
     @ViewBindId(R.id.img_main)
     private ImageView mImgMain;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ViewUtils.inject(this);
+    }
+   @OnClick(R.id.tv_main)
+    private void tvMainClick(TextView tvMain) {
+
+    }
+}
 
 ```
 
